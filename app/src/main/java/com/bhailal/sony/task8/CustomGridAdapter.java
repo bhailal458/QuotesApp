@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,6 +25,8 @@ public class CustomGridAdapter extends BaseAdapter {
     ArrayList<Post> posts;
     private LayoutInflater inflater;
     int[] img;
+    //Animation animation;
+
 
 
 
@@ -53,6 +57,9 @@ public class CustomGridAdapter extends BaseAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
 
 
+//        Animation animation;
+//        animation = AnimationUtils.loadAnimation(activity, R.anim.animation_move);
+
         if(inflater == null)
             inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -63,11 +70,13 @@ public class CustomGridAdapter extends BaseAdapter {
         TextView t1 = (TextView)convertView.findViewById(R.id.gridText);
         ImageView im = (ImageView)convertView.findViewById(R.id.imageview);
 
+
         Post m = posts.get(position);
 
 
         t1.setText(m.getName());
         im.setImageResource(img[position]);
+        //im.startAnimation(animation);
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override

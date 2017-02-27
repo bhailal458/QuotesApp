@@ -6,6 +6,8 @@ import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -150,6 +152,7 @@ public class FirstActivity extends AppCompatActivity {
             }
 
             CustomGridAdapter adapter1 = new CustomGridAdapter(FirstActivity.this, postArrayList,img);
+
             GridView gridview = (GridView)findViewById(R.id.gridview);
             gridview.setAdapter(adapter1);
 
